@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Citas Veterinarias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e0f0ff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007acc;
+        }
+
+        label {
+            display: block;
+            margin-top: 1rem;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        button {
+            margin-top: 1.5rem;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007acc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #005f99;
+        }
+
+        .back-button {
+            margin-top: 1rem;
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .back-button:hover {
+            background-color: #bbb;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 1rem;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Agendar Cita Veterinaria</h2>
+        <form id="appointmentForm">
+            <label for="name">Nombre del dueño:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="petName">Nombre de la mascota:</label>
+            <input type="text" id="petName" name="petName" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="date">Fecha de la cita:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Hora:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="type">Tipo de cita:</label>
+            <select id="type" name="type" required>
+                <option value="consulta general">Consulta General</option>
+                <option value="vacunación">Vacunación</option>
+                <option value="desparasitación">Desparasitación</option>
+                <option value="cirugía">Cirugía</option>
+                <option value="urgencia">Urgencia</option>
+            </select>
+
+            <label for="notes">Notas adicionales:</label>
+            <textarea id="notes" name="notes" rows="3"></textarea>
+
+            <button type="submit">Agendar Cita</button>
+            <div class="success-message" id="successMessage">¡Cita agendada exitosamente!</div>
+        </form>
+        <button class="back-button" onclick="window.location.href='./index.html'">← Volver</button>
+    </div>
+
+    <script>
+        const form = document.getElementById('appointmentForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            successMessage.style.display = 'block';
+            form.reset();
+        });
+    </script>
+</body>
+</html>
