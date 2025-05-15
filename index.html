@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PetCare - Centro Integral para Mascotas">
+    <meta name="keywords" content="Veterinaria, Petshop, Peluquería, Adiestramiento, Guardería, Paseo, Cuidado de mascotas">
+    <meta name="author" content="Tu Nombre">
+    <title>PetCare - Centro Integral para Mascotas</title>
+    <meta property="og:title" content="PetCare - Centro Integral para Mascotas">
+    <meta property="og:description" content="Servicios profesionales para el cuidado de tu mascota">
+    <meta property="og:image" content="./Images/download.jpg">
+    <link rel="icon" type="image/jpg" href="./Images/download.jpg">
+    <link rel="alternate" href="https://mascotas/en" hreflang="es-GB">
+    <link rel="canonical" href="https://mascotas.com">
+    <style>
+        :root {
+            --color-primario: #4CAF50;
+            --color-secundario: #2196F3;
+            --color-texto: #333;
+            --color-fondo: #f4f4f4;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 80px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 2rem 0;
+            box-shadow: 0 1px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Membresías */
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .plan-card {
+            border: 2px solid #b45858;
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .plan-title {
+            color: var(--color-primario);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .plan-price {
+            font-size: 2rem;
+            color: var(--color-texto);
+            margin: 1rem 0;
+            font-weight: bold;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .plan-features li {
+            margin: 0.8rem 0;
+            padding: 0.5rem;
+            background: #f3e7e7;
+            border-radius: 5px;
+        }
+
+        .btn-plan {
+            background: var(--color-primario);
+            color: rgb(216, 205, 205);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn-plan:hover {
+            background: #45a049;
+        }
+
+        /* Checkout */
+        .checkout-container {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .pasos-pago {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .paso {
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            background: #eee;
+            color: #666;
+        }
+
+        .paso.activo {
+            background: var(--color-primario);
+            color: white;
+        }
+
+        .resumen-compra {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .resumen-compra ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .resumen-compra li {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+        }
+
+        .total {
+            font-weight: bold;
+            border-top: 2px solid #ddd;
+            padding-top: 1rem;
+            margin-top: 1rem;
+        }
+
+        .grupo-formulario {
+            margin-bottom: 1.5rem;
+        }
+
+        .grupo-formulario label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .grupo-formulario input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .btn-pagar {
+            background: var(--color-primario);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .btn-pagar:hover {
+            background: #45a049;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--color-primario);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin: 0.5rem 0;
+        }
+
+        /* Modales */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #666;
+        }
+
+        /* Menú flotante */
+        .floating-menu {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .menu-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #444;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .menu-button:hover {
+            background-color: #000;
+            transform: scale(1.1);
+        }
+
+        .menu-items {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background: white;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+
+        .menu-items.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-item {
+            padding: 12px 16px;
+            color: #333;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .menu-item:hover {
+            background-color: #f8f4f4;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .plans {
+                grid-template-columns: 1fr;
+            }
+        }
+        .productos-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .categoria-botones {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .categoria-botones button {
+            background-color: var(--color-primario);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .categoria-botones button:hover {
+            background-color: #45a049;
+        }
+
+        .productos-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .product-card {
+            min-width: 180px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-card h4 {
+            margin: 0.5rem 0 0.25rem;
+            color: var(--color-texto);
+        }
+
+        .product-card .precio {
+            color: var(--color-primario);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn-comprar {
+            background-color: var(--color-secundario);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn-comprar:hover {
+            background-color: #1976d2;
+        }
+        * Sección de productos PetCare */
+        .productos-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .productos-section h2 {
+            text-align: center;
+            color: var(--color-primario);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .product-card h3 {
+            color: var(--color-texto);
+            font-size: 1.2rem;
+            padding: 1rem 1rem 0 1rem;
+        }
+
+        .product-card p {
+            padding: 0 1rem 1rem;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .product-card .precio {
+            font-weight: bold;
+            padding: 0 1rem;
+            color: var(--color-primario);
+        }
+
+        .btn-comprar {
+            background-color: var(--color-secundario);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin: 1rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn-comprar:hover {
+            background-color: #1976d2;
+        }
+         .input-group label {
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+    }
+    .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        transition: border-color 0.3s ease;
+    }
+
+    .input-group input:focus {
+        border-color: var(--color-primario);
+        outline: none;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    }
+
+    .modal-content {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+
+    .btn-login {
+        background-color: var(--color-primario);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-login:hover {
+        background-color: #45a049;
+    }
+
+    .register-link a {
+        color: var(--color-secundario);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#home" class="logo-container">
+                <img src="./Images/MEJRO.png" alt="Logo" class="logo">
+                <h1>PetCare</h1>
+            </a>
+            <nav>
+                <a href="#home">Inicio</a>
+                <a href="#services">Servicios</a>
+                <a href="#products">Productos</a>
+                <a href="#membership">Membresías</a>
+                <a href="#contact">Contacto</a>
+                <a href="./Blog.html">Blog</a>
+                <a href="https://www.twitch.tv/vegetta777" target="_blank" rel="noreferrer">Twitch</a>
+                <a href="https://www.youtube.com/user/vegetta777" target="_blank" rel="noreferrer">Youtube</a>
+                <button class="btn-plan" onclick="showModal('loginModal')">Acceso Clientes</button>
+            </div>
+            </nav>
+        </div>
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Acceso a Mi Cuenta</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-login">Ingresar</button>
+                <p class="register-link">¿No tienes cuenta? <a href="#" id="registerLink">Regístrate aquí</a></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Crear Cuenta</h2>
+            <form id="registerForm">
+                <div class="input-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="regEmail" required>
+                </div>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="regPassword" minlength="8" required>
+                </div>
+                <div class="input-group">
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" id="regPasswordConfirm" required>
+                </div>
+                <button type="submit" class="btn-login">Registrarse</button>
+                <p class="register-link">¿Ya tienes cuenta? <a href="#" id="loginFromRegister">Iniciar Sesión</a></p>
+            </form>
+        </div>
+    </div>
+    </header>
+    </script>
+    <main>
+        <section id="home">
+            <h2>Bienvenidos a Que paso Ayer</h2>
+            <p>Especialistas en cuidado integral para mascotas</p>
+            <ul>
+            <li>Veterinaria 24hrs</li>
+            <li>Peluquería profesional</li>
+            <li>Guardería premium</li>
+            </ul>
+        </section>
+   <div style="display: flex; gap: 2rem; align-items: flex-start;">
+  <section id="cart-section" style="background-color: #f9f9f9; padding: 1rem; border: 1px solid #ddd; flex: 1;">
+      <h3>🛒 Carrito de Compras</h3> 
+      <ul id="cart-items" style="list-style: none; padding: 0;"></ul>
+      <p><strong>Total:</strong> <span id="cart-total">$0.00</span></p>
+  </section>
+
+  <section id="checkout" style="padding: 1rem; background-color: #eef9f1; border-radius: 10px; max-width: 500px; flex: 1;">
+      <h2>💳 Pagar</h2>
+      <p>Revise su carrito antes de pagar.</p>
+      <button onclick="mostrarFormularioPago()" style="background-color: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-size: 1.1rem;">
+          Pagar <span id="boton-pago-total">$0.00</span>
+      </button>
+  </section>
+</div>
+    <section id="products" class="productos-section">
+        <h2>Productos para Mascotas</h2>
+        <div class="categoria-botones">
+            <button onclick="showProductCategory('perros')">🐶 Perros</button>
+            <button onclick="showProductCategory('gatos')">🐱 Gatos</button>
+            <button onclick="showProductCategory('otros')">🦜 Otros</button>
+            <button onclick="hideProductCategory()" style="background-color: #ff4d4d; color: white;">❌ Cerrar Categoría</button>
+        </div>
+        <div id="product-container" class="productos-carousel"></div>
+    </section>
+
+    <section id="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="categoria-botones" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+            <button onclick="showCategory('veterinaria')">🐾 Veterinaria</button>
+            <button onclick="showCategory('peluqueria')">✂️ Peluquería</button>
+            <button onclick="showCategory('adiestramiento')">🎓 Adiestramiento</button>
+            <button onclick="showCategory('guarderia')">🏠 Guardería</button>
+            <button onclick="showCategory('paseo')">🚶 Paseo</button>
+            <button onclick="showCategory('cuidado')">🛡️ Cuidado de Mascotas</button>
+            <button onclick="hideCategory()" style="background-color: #ff4d4d; color: white;">❌ Cerrar Categoría</button>
+        </div>
+        <div id="service-container" class="services-carousel"></div>
+    </section>
+
+    <section id="formulario-pago-container" style="display: none;">
+        <div class="checkout-container">
+            <div class="pasos-pago">
+                <div class="paso activo">1. Carrito</div>
+                <div class="paso">2. Pago</div>
+                <div class="paso">3. Confirmación</div>
+            </div>
+
+            <div class="formulario-pago">
+                <h2><span class="icono-pago">🐾</span> Pago Seguro</h2>
+                <div class="resumen-compra">
+                    <h3>Tu Pedido:</h3>
+                    <ul id="resumen-compra-list"></ul>
+                    <div class="total">
+                        Total: <span id="resumen-total">$0.00</span>
+                    </div>
+                </div>
+
+                <form id="formPago">
+                    <div class="grupo-formulario">
+                        <label>Tarjeta de Crédito/Débito</label>
+                        <div class="input-tarjeta">
+                            <input type="text" placeholder="0000 0000 0000 0000" maxlength="16" required>
+                            <div class="iconos-tarjetas">
+                                <img src="visa-icon.png" alt="Visa">
+                                <img src="mastercard-icon.png" alt="Mastercard">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grupo-doble">
+                        <div class="grupo-formulario">
+                            <label>Fecha de Expiración</label>
+                            <input type="text" placeholder="MM/AA" maxlength="5" required>
+                        </div>
+
+                        <div class="grupo-formulario">
+                            <label>CVC</label>
+                            <input type="text" placeholder="123" maxlength="3" required>
+                        </div>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label>Nombre en la Tarjeta</label>
+                        <input type="text" placeholder="Juan Pérez" required>
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label>Correo Electrónico</label>
+                        <input type="email" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+
+                    <button type="submit" class="btn-pagar">
+                        Pagar <span id="boton-pago-confirmar">$0.00</span>
+                    </button>
+
+                    <div class="seguridad">
+                        🔒 Transacción segura SSL | 256-bit encryption
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const cart = [];
+
+        function showCategory(category) {
+            const serviceContainer = document.getElementById('service-container');
+            serviceContainer.innerHTML = '';
+            serviceContainer.style.display = 'flex';
+            serviceContainer.style.overflowX = 'auto';
+            serviceContainer.style.gap = '20px';
+            serviceContainer.style.paddingBottom = '1rem';
+
+            const services = {
+                veterinaria: [
+                    { nombre: 'Consulta general', precio: '$20.00', imagen: './Images/CONSULTA GENERAL.jpg' },
+                    { nombre: 'Vacunación', precio: '$15.00', imagen: './Images/VACUNACION.png' },
+                    { nombre: 'Desparasitaciones', precio: '$10.00', imagen: './Images/DESPARACITACION.avif' }
+                ],
+                peluqueria: [
+                    { nombre: 'Corte de pelo', precio: '$25.00', imagen: './Images/Corte de pelo.jpg' },
+                    { nombre: 'Baño completo', precio: '$20.00', imagen: 'bano.jpg' },
+                    { nombre: 'Limpieza de oídos', precio: '$10.00', imagen: 'oidos.jpg' }
+                ],
+                adiestramiento: [
+                    { nombre: 'Entrenamiento básico', precio: '$50.00', imagen: 'basico.jpg' },
+                    { nombre: 'Entrenamiento avanzado', precio: '$100.00', imagen: 'avanzado.jpg' },
+                    { nombre: 'Corrección de conducta', precio: '$75.00', imagen: 'conducta.jpg' }
+                ],
+                guarderia: [
+                    { nombre: 'Cuidado diurno', precio: '$30.00', imagen: 'diurno.jpg' },
+                    { nombre: 'Cuidado nocturno', precio: '$40.00', imagen: 'nocturno.jpg' },
+                    { nombre: 'Cuidado 24 horas', precio: '$60.00', imagen: '24horas.jpg' }
+                ],
+                paseo: [
+                    { nombre: 'Paseo corto', precio: '$10.00', imagen: 'corto.jpg' },
+                    { nombre: 'Paseo largo', precio: '$20.00', imagen: 'largo.jpg' },
+                    { nombre: 'Paseo personalizado', precio: '$30.00', imagen: 'personalizado.jpg' }
+                ],
+                cuidado: [
+                    { nombre: 'Cuidado en casa', precio: '$50.00', imagen: 'casa.jpg' },
+                    { nombre: 'Cuidado en clínica', precio: '$70.00', imagen: 'clinica.jpg' },
+                    { nombre: 'Cuidado personalizado', precio: '$100.00', imagen: 'personalizado.jpg' }
+                ]
+            };
+
+            if (services[category]) {
+                services[category].forEach(service => {
+                    const div = document.createElement('div');
+                    div.className = 'service-card';
+                    div.style.textAlign = 'center';
+                    div.style.border = '1px solid #ddd';
+                    div.style.borderRadius = '10px';
+                    div.style.padding = '1rem';
+                    div.style.boxShadow = '0 2px 6px rgba(0,0,0,0.1)';
+                    div.style.width = '200px';
+
+                    div.innerHTML = `
+                        <img src="${service.imagen}" alt="${service.nombre}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
+                        <h4>${service.nombre}</h4>
+                        <p class="precio">${service.precio}</p>
+                        <button class="btn-comprar" onclick="addToCart('${service.nombre}', '${service.precio}')">Agregar al Carrito</button>
+                        <button onclick="window.location.href='./citas.html'" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;"> Agendar Cita</button>
+
+                    `;
+                    serviceContainer.appendChild(div);
+                });
+            }
+        }
+
+        function hideCategory() {
+            document.getElementById('service-container').innerHTML = '';
+        }
+
+        function renderCart() {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.nombre} - ${item.precio}`;
+                cartItems.appendChild(li);
+                total += parseFloat(item.precio.replace('$', ''));
+            });
+
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+            document.getElementById('boton-pago-total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        function showProductCategory(category) {
+            const productContainer = document.getElementById('product-container');
+            productContainer.innerHTML = '';
+            productContainer.style.display = 'flex';
+            productContainer.style.overflowX = 'auto';
+            productContainer.style.gap = '20px';
+            productContainer.style.paddingBottom = '1rem';
+
+            const products = {
+                perros: [
+                    { nombre: 'Collar para Perros', precio: '$10.00', imagen: 'collar.jpg' },
+                    { nombre: 'Juguete para Perros', precio: '$5.00', imagen: 'juguete.jpg' }
+                ],
+                gatos: [
+                    { nombre: 'Rascador para Gatos', precio: '$15.00', imagen: 'rascador.jpg' },
+                    { nombre: 'Arena para Gatos', precio: '$8.00', imagen: 'arena.jpg' }
+                ],
+                otros: [
+                    { nombre: 'Jaula para Pájaros', precio: '$20.00', imagen: 'jaula.jpg' },
+                    { nombre: 'Comida para Peces', precio: '$3.00', imagen: 'peces.jpg' }
+                ]
+            };
+
+            products[category].forEach(product => {
+                const div = document.createElement('div');
+                div.className = 'product-card';
+                div.style.textAlign = 'center';
+                div.style.border = '1px solid #ddd';
+                div.style.borderRadius = '10px';
+                div.style.padding = '1rem';
+                div.style.boxShadow = '0 2px 6px rgba(0,0,0,0.1)';
+                div.style.width = '00px';
+
+                div.innerHTML = `
+                    <img src="${product.imagen}" alt="${product.nombre}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 6px; margin-bottom: 10px;">
+                    <h4>${product.nombre}</h4>
+                    <p class="precio">${product.precio}</p>
+                    <button class="btn-comprar" onclick="addToCart('${product.nombre}', '${product.precio}')">Agregar al Carrito</button>
+                `;
+                productContainer.appendChild(div);
+            });
+        }
+
+        function hideProductCategory() {
+            document.getElementById('product-container').innerHTML = '';
+        }
+
+        function addToCart(nombre, precio) {
+            cart.push({ nombre, precio });
+            renderCart();
+        }
+
+        function mostrarFormularioPago() {
+    if (cart.length === 0) {
+        alert('Tu carrito está vacío. Agrega productos o servicios antes de pagar.');
+        return;
+    }
+
+    const formularioPagoContainer = document.getElementById('formulario-pago-container');
+    formularioPagoContainer.style.display = 'flex';
+    formularioPagoContainer.style.flexDirection = 'column'; // Asegura buena disposición interna
+
+    // Limpiar y calcular resumen
+    const resumenLista = document.getElementById('resumen-compra-list');
+    resumenLista.innerHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.innerHTML = `${item.nombre} <span>${item.precio}</span>`;
+        resumenLista.appendChild(li);
+        total += parseFloat(item.precio.replace('$', ''));
+    });
+
+    document.getElementById('resumen-total').textContent = `$${total.toFixed(2)}`;
+    document.getElementById('boton-pago-confirmar').textContent = `$${total.toFixed(2)}`;
+
+    // Estilos del contenedor del formulario
+    formularioPagoContainer.style.position = 'fixed';
+    formularioPagoContainer.style.top = '50%';
+    formularioPagoContainer.style.left = '50%';
+    formularioPagoContainer.style.transform = 'translate(-50%, -50%)';
+    formularioPagoContainer.style.zIndex = '1000';
+    formularioPagoContainer.style.backgroundColor = 'white';
+    formularioPagoContainer.style.boxShadow = '0 4px 12px rgba(0,0,0,0.3)';
+    formularioPagoContainer.style.borderRadius = '10px';
+    formularioPagoContainer.style.padding = '20px';
+    formularioPagoContainer.style.width = '95%';
+    formularioPagoContainer.style.maxWidth = '650px'; // un poco más ancho
+    formularioPagoContainer.style.maxHeight = '90vh';
+    formularioPagoContainer.style.overflowY = 'auto';
+    formularioPagoContainer.style.position = 'fixed';
+
+    // Agregar botón de cierre si aún no existe
+    if (!document.getElementById('closeButtonPago')) {
+        const closeButton = document.createElement('button');
+        closeButton.textContent = '✖';
+        closeButton.id = 'closeButtonPago';
+        closeButton.style.position = 'absolute';
+        closeButton.style.top = '10px';
+        closeButton.style.right = '10px';
+        closeButton.style.backgroundColor = '#ff4d4d';
+        closeButton.style.color = 'white';
+        closeButton.style.border = 'none';
+        closeButton.style.borderRadius = '50%';
+        closeButton.style.width = '30px';
+        closeButton.style.height = '30px';
+        closeButton.style.cursor = 'pointer';
+        closeButton.style.fontSize = '1.2rem';
+        closeButton.style.display = 'flex';
+        closeButton.style.alignItems = 'center';
+        closeButton.style.justifyContent = 'center';
+        closeButton.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.2)';
+
+        closeButton.addEventListener('click', () => {
+            formularioPagoContainer.style.display = 'none';
+        });
+
+        formularioPagoContainer.appendChild(closeButton);
+    }
+}
+
+    </script>
+<div style="background-color: white; padding: 2rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 2rem 0;">
+<section id="membership" class="plans"></section>
+    <h2>Membresías</h2>
+    <div class="plans-container" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <div class="plan-card" style="flex: 1; max-width: 300px;">
+            <h3 class="plan-title">Membresía Básica</h3>
+            <p class="plan-price">$20.00/mes</p>
+            <ul class="plan-features">
+                <li>Consulta veterinaria mensual</li>
+                <li>Descuentos en productos</li>
+                <li>Acceso a promociones exclusivas</li>
+            </ul>
+            <button class="btn-plan" onclick="addToCart('Membresía Básica', '$20.00')">Agregar al Carrito</button>
+        </div>
+
+        <div class="plan-card">
+            <h3 class="plan-title">Membresía Premium</h3>
+            <p class="plan-price">$35.00/mes</p>
+            <ul class="plan-features">
+                <li>Consulta veterinaria ilimitada</li>
+                <li>Peluquería mensual</li>
+                <li>Descuentos en servicios</li>
+                <li>Acceso a eventos exclusivos</li>
+            </ul>
+            <button class="btn-plan" onclick="addToCart('Membresía Premium', '$35.00')">Agregar al Carrito</button>
+        </div>
+
+        <div class="plan-card">
+            <h3 class="plan-title">Membresía VIP</h3>
+            <p class="plan-price">$50.00/mes</p>
+            <ul class="plan-features">
+                <li>Consulta veterinaria ilimitada</li>
+                <li>Peluquería mensual</li>
+                <li>Guardería gratuita</li>
+                <li>Descuentos en productos y servicios</li>
+                <li>Acceso a eventos exclusivos</li>
+            </ul>
+            <button class="btn-plan" onclick="addToCart('Membresía VIP', '$50.00')">Agregar al Carrito</button>
+        </div>
+    </div>
+</div>
+</section>
+
+    <footer>
+       <footer>
+        <p>&copy; 2023 Pagina Lab Ideas. Todos los derechos reservados.</p>
+        <p>Contacto: Diego Cardenas</p>
+        <p>Teléfono: 123-456-7890</p>
+        <p>Dirección: Calle Falsa 123, Ciudad</p>
+        <p>Redes Sociales: 
+            <a class="LinkRedes" href="https://www.facebook.com/tu_pagina" target="_blank">Facebook</a> | 
+            <a class="LinkRedes" href="https://www.instagram.com/tu_pagina" target="_blank">Instagram</a> | 
+            <a class="LinkRedes" href="https://www.twitter.com/tu_pagina" target="_blank">Twitter</a>
+        </p>
+    </footer>
+</script>
+<script>
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+    const loginLink = document.getElementById('loginLink');
+    const registerLink = document.getElementById('registerLink');
+    const loginFromRegister = document.getElementById('loginFromRegister');
+    const closes = document.getElementsByClassName('close');
+
+    [registerLink, loginFromRegister].forEach(link => {
+        link?.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginModal.style.display = link.id === 'registerLink' ? 'none' : 'block';
+            registerModal.style.display = link.id === 'registerLink' ? 'block' : 'none';
+        });
+    });
+
+    Array.from(closes).forEach(close => {
+        close.addEventListener('click', () => {
+            loginModal.style.display = 'none';
+            registerModal.style.display = 'none';
+        });
+    });
+
+    window.onclick = (e) => {
+        if (e.target === loginModal || e.target === registerModal) {
+            loginModal.style.display = 'none';
+            registerModal.style.display = 'none';
+        }
+    };
+
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        if (email && password) {
+            localStorage.setItem('loggedUser', email);
+            alert('¡Bienvenido!');
+            loginModal.style.display = 'none';
+            updateNav();
+        }
+    });
+
+    document.getElementById('registerForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('regEmail').value;
+        const password = document.getElementById('regPassword').value;
+        const passwordConfirm = document.getElementById('regPasswordConfirm').value;
+
+        if (password !== passwordConfirm) {
+            alert('Las contraseñas no coinciden');
+            return;
+        }
+
+        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        if (users.some(user => user.email === email)) {
+            alert('El usuario ya existe');
+            return;
+        }
+
+        users.push({
+            email: email,
+            password: password,
+            name: document.getElementById('fullName').value
+        });
+
+        localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('loggedUser', email);
+        registerModal.style.display = 'none';
+        alert('¡Registro exitoso!');
+        updateNav();
+    });
+
+    function updateNav() {
+        const loggedUser = localStorage.getItem('loggedUser');
+        if (loggedUser) {
+            const userName = loggedUser.split('@')[0];
+            if (loginLink) {
+                loginLink.textContent = `Bienvenido, ${userName}`;
+                loginLink.removeAttribute('href');
+            }
+
+            const logoutBtn = document.createElement('a');
+            logoutBtn.textContent = 'Cerrar Sesión';
+            logoutBtn.href = '#';
+            logoutBtn.style.marginLeft = '10px';
+            logoutBtn.style.color = '#ff4d4d';
+            logoutBtn.style.fontWeight = 'bold';
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('loggedUser');
+                location.reload();
+            });
+            document.querySelector('nav').appendChild(logoutBtn);
+        }
+    }
+
+    const menuButton = document.getElementById('menuButton');
+    const menuItems = document.getElementById('menuItems');
+    const menuTrigger = document.querySelector('.menu-trigger');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    menuButton?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menuItems.classList.toggle('show');
+    });
+
+    menuTrigger?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        dropdownMenu.classList.toggle('show');
+    });
+
+    document.addEventListener('click', () => {
+        menuItems?.classList.remove('show');
+        dropdownMenu?.classList.remove('show');
+    });
+
+    function showModal(modalId) {
+        document.getElementById(modalId).style.display = 'block';
+        menuItems?.classList.remove('show');
+        dropdownMenu?.classList.remove('show');
+    }
+
+    window.onload = updateNav;
+</script>
+</body>
+</html>
+
