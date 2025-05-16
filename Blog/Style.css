@@ -1,4 +1,4 @@
-    /* Estilos previos modificados + nuevos */
+/* Estilos previos modificados + nuevos */
 :root {
     --color-primario: #4CAF50;
     --color-secundario: #2196F3;
@@ -16,35 +16,36 @@
     padding: 0;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: var(--color-texto);
     background-color: var(--color-fondo);
 }
- .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            text-decoration: none;
-        }
 
-        .logo {
-            width: 80px;
-            height: auto;
-            transition: transform 0.3s ease;
-        }
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        .logo:hover {
-            transform: scale(1.05);
-        }
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-decoration: none;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
 
 /* Header */
 header {
@@ -60,6 +61,7 @@ header {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    flex-wrap: wrap; /* ← importante para que no se desborde en pantallas pequeñas */
     padding: 1rem;
     background-color: var(--color-gris-claro);
 }
@@ -71,6 +73,7 @@ header {
     padding: 0.5rem 1rem;
     border-radius: 25px;
     transition: background 0.3s ease;
+    white-space: nowrap;
 }
 
 .nav-principal a:hover {
@@ -172,3 +175,35 @@ footer {
     margin-top: 3rem;
 }
 
+/* ======================== */
+/* RESPONSIVE DESIGN - MÓVIL */
+/* ======================== */
+@media (max-width: 768px) {
+    /* No cambiamos nav-principal → sigue en fila */
+
+    .blog-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .logo {
+        width: 60px;
+    }
+
+    header {
+        padding: 1.5rem 1rem;
+    }
+
+    .newsletter {
+        padding: 1.5rem 1rem;
+    }
+
+    input[type="email"] {
+        max-width: 100%;
+    }
+
+    .btn-suscribir {
+        width: 100%;
+        padding: 1rem;
+    }
+}
