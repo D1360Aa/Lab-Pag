@@ -623,10 +623,7 @@
                 <a href="#services">Servicios</a>
                 <a href="#products">Productos</a>
                 <a href="#membership">Membresías</a>
-                <a href="#contact">Contacto</a>
                 <a href="./Blog.html">Blog</a>
-                <a href="https://www.twitch.tv/vegetta777" target="_blank" rel="noreferrer">Twitch</a>
-                <a href="https://www.youtube.com/user/vegetta777" target="_blank" rel="noreferrer">Youtube</a>
                 <button class="btn-plan" onclick="showModal('loginModal')">Acceso Clientes</button>
             </div>
             </nav>
@@ -811,28 +808,27 @@
                 ],
                 peluqueria: [
                     { nombre: 'Corte de pelo', precio: '$25.00', imagen: './Images/Corte de pelo.jpg' },
-                    { nombre: 'Baño completo', precio: '$20.00', imagen: 'bano.jpg' },
-                    { nombre: 'Limpieza de oídos', precio: '$10.00', imagen: 'oidos.jpg' }
+                    { nombre: 'Baño completo', precio: '$20.00', imagen: './Images/Perro baño.jpg' },
+                    { nombre: 'Limpieza de oídos', precio: '$10.00', imagen: './Images/OIDO LIMPIO.png' }
                 ],
                 adiestramiento: [
-                    { nombre: 'Entrenamiento básico', precio: '$50.00', imagen: 'basico.jpg' },
-                    { nombre: 'Entrenamiento avanzado', precio: '$100.00', imagen: 'avanzado.jpg' },
-                    { nombre: 'Corrección de conducta', precio: '$75.00', imagen: 'conducta.jpg' }
+                    { nombre: 'Entrenamiento básico', precio: '$50.00', imagen: './Images/entreno.avif' },
+                    { nombre: 'Entrenamiento avanzado', precio: '$100.00', imagen: './Images/AVANZADO.jpg' },
+                    { nombre: 'Corrección de conducta', precio: '$75.00', imagen: './Images/CONDUCTA.jpeg' }
                 ],
                 guarderia: [
-                    { nombre: 'Cuidado diurno', precio: '$30.00', imagen: 'diurno.jpg' },
-                    { nombre: 'Cuidado nocturno', precio: '$40.00', imagen: 'nocturno.jpg' },
-                    { nombre: 'Cuidado 24 horas', precio: '$60.00', imagen: '24horas.jpg' }
+                    { nombre: 'Cuidado diurno', precio: '$30.00', imagen: './Images/DIAS.webp' },
+                    { nombre: 'Cuidado nocturno', precio: '$40.00', imagen: './Images/DIURNO.jpg' },
+                    { nombre: 'Cuidado 24 horas', precio: '$60.00', imagen: './Images/HOTEL.jpg' }
                 ],
                 paseo: [
-                    { nombre: 'Paseo corto', precio: '$10.00', imagen: 'corto.jpg' },
-                    { nombre: 'Paseo largo', precio: '$20.00', imagen: 'largo.jpg' },
-                    { nombre: 'Paseo personalizado', precio: '$30.00', imagen: 'personalizado.jpg' }
+                    { nombre: 'Paseo corto', precio: '$10.00', imagen: './Images/CORTO.jpg' },
+                    { nombre: 'Paseo largo', precio: '$20.00', imagen: './Images/DIA.jpg' },
+                    { nombre: 'Paseo personalizado', precio: '$30.00', imagen: './Images/PERSO.jpg' }
                 ],
                 cuidado: [
-                    { nombre: 'Cuidado en casa', precio: '$50.00', imagen: 'casa.jpg' },
-                    { nombre: 'Cuidado en clínica', precio: '$70.00', imagen: 'clinica.jpg' },
-                    { nombre: 'Cuidado personalizado', precio: '$100.00', imagen: 'personalizado.jpg' }
+                    { nombre: 'Cuidado en casa', precio: '$50.00', imagen: './Images/casa.jpg' },
+                    { nombre: 'Cuidado en clínica', precio: '$70.00', imagen: './Images/CLINICA.jpg' }
                 ]
             };
 
@@ -891,16 +887,24 @@
 
             const products = {
                 perros: [
-                    { nombre: 'Collar para Perros', precio: '$10.00', imagen: 'collar.jpg' },
-                    { nombre: 'Juguete para Perros', precio: '$5.00', imagen: 'juguete.jpg' }
+                    { nombre: 'Collar para Perros', precio: '$7.00', imagen: './Images/COLLAR PARA PERRO.jpg' },
+                    { nombre: 'Juguete Masticable', precio: '$5.00', imagen: './Images/Juguete masticable.webp' },
+                    { nombre: 'Agility Gold Grandes Adultos 15 Kg para perros de Razas Grandes - Sin Granos', precio: '$40.00', imagen: './Images/COMIDA PERRO.jpg' },
+                    { nombre: 'Agility Gold Concentrado para perros Obesos 7 Kg', precio: '$30.00', imagen: './Images/COMIDA PERRO OBESO.jpg' },
+                    { nombre: 'ALIMENTO DE PERRO RINGO ORIGINAL ADULTO 2KG', precio: '$3.00', imagen: './Images/RINGO.jpg' },
+                    { nombre: 'SHAMPOO PERRO CANAMOR ANTIPULGAS 230ML', precio: '$7.00', imagen: './Images/shampo perro.webp' }
                 ],
                 gatos: [
-                    { nombre: 'Rascador para Gatos', precio: '$15.00', imagen: 'rascador.jpg' },
-                    { nombre: 'Arena para Gatos', precio: '$8.00', imagen: 'arena.jpg' }
+                    { nombre: 'Rascador para Gatos', precio: '$10.00', imagen: './Images/RASCADOR.webp' },
+                    { nombre: 'Arena Fresh Step Multi Cat con Febreze Caja de 25 Lb', precio: '$8.00', imagen: './Images/ARENA GATO.jpg' },
+                    { nombre: 'Equilíbrio Concentrado Gatos Adultos 8.25 Kg', precio: '$40.00', imagen: './Images/CONCENTRADO.jpg' },
+                    { nombre: 'SNACK PARA GATOS TEMPTATIONS MIX POLLO HIGADO Y RES 180G', precio: '$6.00', imagen: './Images/SNACK.webp' },
+                    { nombre: 'ALIMENTO PARA GATOS OHMAIGAT GATITOS JUGUETONES 1.5KG', precio: '$14.00', imagen: './Images/COMIDA GATITO.webp' }
                 ],
                 otros: [
-                    { nombre: 'Jaula para Pájaros', precio: '$20.00', imagen: 'jaula.jpg' },
-                    { nombre: 'Comida para Peces', precio: '$3.00', imagen: 'peces.jpg' }
+                    { nombre: 'Jaula Pájaros Canario Perico Vintage Colgante Casa Para Aves', precio: '$23.00', imagen: './Images/JAULA.webp' },
+                    { nombre: 'Alimento Para Peces Tetra Color Crisps - 20 g', precio: '$5.00', imagen: './Images/COMIDA PECES.webp' },
+                    { nombre: 'Comida Para Hámster Bolsa - 250 g', precio: '$3.00', imagen: './Images/COMIDA HAMSTER.webp' }
                 ]
             };
 

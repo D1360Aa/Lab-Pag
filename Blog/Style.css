@@ -16,6 +16,13 @@
     padding: 0;
 }
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -164,3 +171,4 @@ footer {
     padding: 2rem;
     margin-top: 3rem;
 }
+
